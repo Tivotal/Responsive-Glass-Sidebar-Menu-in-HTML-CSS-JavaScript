@@ -1,0 +1,152 @@
+/* Created by Tivotal */
+
+/* Google Fonts(Poppins) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  background: url(images/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sidebar {
+  width: 120px;
+  height: 100vh;
+  background: rgba(10, 10, 10, 0.65);
+  border-right: 2px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 8px 35px rgb(2, 4, 24);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: all 0.4s ease-in-out;
+}
+
+.sidebar.open {
+  width: 360px;
+}
+
+.sidebar .logo {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sidebar .logo img {
+  width: 50px;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.sidebar.open .logo img {
+  width: 90px;
+}
+
+.sidebar .logo h3 {
+  font-size: 30px;
+  color: #fff;
+  font-weight: 600;
+  font-variant: small-caps;
+  transition: 0.4s;
+  pointer-events: none;
+  scale: 0;
+  opacity: 0;
+}
+
+.sidebar.open .logo h3 {
+  scale: 1;
+  opacity: 1;
+  transition: 0.4s;
+  transition-delay: 0.2s;
+}
+
+.sidebar nav {
+  padding: 0 30px;
+}
+
+.sidebar nav .nav-item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 4px;
+  width: 100%;
+  height: 56px;
+  color: #fff;
+  padding: 0 16px;
+  margin: 8px 0;
+  transition: 0.3s;
+}
+
+.sidebar nav .nav-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar nav .nav-item i {
+  font-size: 25px;
+}
+
+.sidebar nav .nav-item span {
+  font-size: 18px;
+  margin-left: 8px;
+  transition: all 0.4s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar.open nav .nav-item span {
+  opacity: 1;
+  pointer-events: auto;
+  transition: 0.4s;
+  transition-delay: 0.2s;
+}
+
+.sidebar nav hr {
+  height: 2px;
+  width: 100%;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 40px 0 50px;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.sidebar.open nav hr {
+  opacity: 1;
+}
+
+.sidebar nav .nav-item.active {
+  background-color: #4070f4;
+}
+
+.sidebar .toggle {
+  cursor: pointer;
+  position: absolute;
+  top: 50px;
+  right: -15px;
+  font-size: 38px;
+  color: #fff;
+  line-height: 50%;
+  text-align: center;
+  border-radius: 50%;
+  padding: 2px 0 2px 2px;
+  background: linear-gradient(90deg, transparent 50%, rgba(10, 10, 10, 0.65));
+}
+
+.sidebar .toggle i {
+  transition: all 0.4s linear;
+}
+
+.sidebar.open .toggle i {
+  transform: rotateY(180deg);
+}
